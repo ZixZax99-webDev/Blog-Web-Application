@@ -1,0 +1,23 @@
+<%- include("partials/header.ejs") %>
+
+<div class="container-view">
+    <div class="card-view">
+        <div class="top-card">
+            <h2> <%= numOfBlog[blogID].title; %> </h2>
+            <form action="/delete" method="post">
+                <input type="hidden" name="deleteBlog" value="delete">
+                <input type="hidden" name="blogID" value="<%= numOfBlog[blogID].blogID %>">
+                <button class="delete-button" type="submit" onclick="deleteAlert()"><img class="delete-icon" src="/images/delete.png" alt="delete icon"></button>
+            </form>
+        </div>
+        <p> <%= numOfBlog[blogID].post; %> </p>
+    </div>
+</div>
+
+<script>
+    function deleteAlert() {
+        alert("Blog has been deleted!");
+    }
+</script>
+
+<%- include("partials/footer.ejs") %>

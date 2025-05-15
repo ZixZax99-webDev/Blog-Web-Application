@@ -1,0 +1,35 @@
+/* navigation bar style */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 20px;
+    overflow: hidden;
+    background-color: #000000;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+ul > div {
+    margin-left: 20px;
+    margin-right: 40px;
+}
+
+
+li {
+    float: right;
+    color: white;
+    margin-right: 20px;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* li a:hover {
+background-color: #111;
+} */

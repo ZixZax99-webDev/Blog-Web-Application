@@ -1,0 +1,29 @@
+<%- include("partials/header.ejs") %>
+
+<!-- Hero section -->
+<div class="hero-section">
+    <h1>Blog <br> Web</h1>
+    <h2 class="separator">|</h2>
+    <h2 class="application-text">Application</h2>
+</div>
+
+<!-- Content section -->
+
+<div class="content-section">
+    <a class="create-button" href="/create"> + Create Post</a>
+    <div class="line"></div>
+    <div class="section">
+        <% for (let i = 0; i < numOfBlog.length; i++) { %>
+            <div class="card">
+                <h3> <%= numOfBlog[i].title; %> </h3>
+                <em>Posted on <%= numOfBlog[i].postedDate; %> </em>
+                <p> <%= numOfBlog[i].post; %> </p>
+                <form action="/view" method="post">
+                    <input type="hidden" name="blogID" value="<%= numOfBlog[i].blogID %>">
+                    <button class="submit-button" type="submit">View</button>
+                </form>
+            </div>
+        <% } %>
+    </div>
+</div>
+<%- include("partials/footer.ejs") %>
